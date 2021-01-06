@@ -80,7 +80,11 @@ def create_ebook(path):
     # Building PDF
     print('building pdf...')
 
-    subprocess.check_output(['pandoc', 'ebook.md', '-V', 'documentclass=report', '-t', 'latex', '-s',
+    if (name_path == 'ja'):
+        subprocess.check_output(['pandoc', 'ebook.md', '-V', 'documentclass=bxjsreport' , '-V', 'classoption=pandoc', '-t', 'latex', '-s',
+                             '--toc', '--listings', '-H', 'ebook/listings-setup.tex', '-o', 'ebook/Vulkan Tutorial ' + name_path + '.pdf', '--pdf-engine=xelatex'])
+    else:
+        subprocess.check_output(['pandoc', 'ebook.md', '-V', 'documentclass=report' , '-t', 'latex', '-s',
                              '--toc', '--listings', '-H', 'ebook/listings-setup.tex', '-o', 'ebook/Vulkan Tutorial ' + name_path + '.pdf', '--pdf-engine=xelatex'])
 
     print('building epub...')
