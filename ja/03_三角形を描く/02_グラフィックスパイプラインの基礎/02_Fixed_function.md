@@ -4,8 +4,8 @@
 
 構造体 `VkPipelineVertexInputStateCreateInfo` は、頂点シェーダに渡される頂点データのフォーマットを記述します。これは大まかに2つの部分で記述されています。
 
-* Bindings：データ間の間隔と、データがバーテックス単位かインスタンス単位か（[instancing](https://en.wikipedia.org/wiki/Geometry_instancing)を参照）
-* Attribute descriptions：頂点シェーダに渡される属性の型、どのバインディングから読み込むか、オフセットはいくらか
+* Bindings: データ間の間隔と、データがバーテックス単位かインスタンス単位か（[instancing](https://en.wikipedia.org/wiki/Geometry_instancing)を参照）
+* Attribute descriptions: 頂点シェーダに渡される属性の型、どのバインディングから読み込むか、オフセットはいくらか
 
 頂点シェーダで直接頂点データをハードコーディングしているので、とりあえず読み込む頂点データがないことを指示するように、この構造体を埋めていきます。これについては、頂点バッファの章で詳しく説明します。
 
